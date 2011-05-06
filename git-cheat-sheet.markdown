@@ -15,7 +15,7 @@
 
 ##index
 - auch *staging area* genannt
-- enthält Änderungen die im nächsten Commit enthalten sein sollen.
+- enthält Änderungen die im nächsten Commit enthalten sein sollen
 - Stand der Datei im *index* ist exakt der Stand zum Zeitpunkt des Hinzufügens (Snapshot)
 
 ##tracking
@@ -26,7 +26,7 @@ Von tracked spricht man:
 
 ##referenzen
 - Branches und Tags sind Referenzen
-- Referenzen werden im Ordner `.git/refs` angelegt.
+- Referenzen werden im Ordner `.git/refs` angelegt
 - Referenzen sind Pointer auf Commits (Tags können auch auf Trees oder Blobs zeigen)
 - im Ordner `.git/refs/heads` befinden sich die Referenzen auf die lokale branches
 - im Ordner `.git/refs/remotes/<remote name>` befinden sich die Referenzen auf die remote branches
@@ -55,7 +55,7 @@ z.B. refspec für eine branch:
 	<remote branch reference>:<local branch reference>
 	refs/heads/master:refs/remotes/origin/master
 
-kurzschreibweise:
+Kurzschreibweise:
 
 	master:origin/master
 	
@@ -75,8 +75,8 @@ remote *origin* verwendet.
 ## fast-forward
 
 Ein merge oder push ist fast-forward, wenn die Zielbranch ein 
-Vorgänger der Quellbranch ist. Sprich die Quellbranch enthält 
-alle commits der Zielbranch.
+Vorgänger der Quellbranch ist. Sprich der Quellbranch enthält 
+alle Commits der Zielbranch.
 
 
 # Befehle zur Arbeit mit dem Repository
@@ -330,12 +330,12 @@ Dies ist leider nicht mittels `git tag` möglich, aber lässt sich mit `git show
 
 https://git.wiki.kernel.org/index.php/Aliases
 
-Mittels `git config` können aliases können in 
+Mittels `git config` können Aliases können in 
 `.git/config` oder `~/.gitconfig` eingefügt werden.
 
   git config [--global] alias.{name} {command}
 
-Ein Alias der mehrere git Ausführen soll, muss ein Ausrufezeichen vorangestellt werden:
+Einem Alias der mehrere git Kommandos ausführen soll, muss ein Ausrufezeichen vorangestellt werden:
 
   [alias]
     jetty = !git cherry-pick --no-commit embedded_jetty_patch && git reset
@@ -365,7 +365,7 @@ Ein Alias der mehrere git Ausführen soll, muss ein Ausrufezeichen vorangestellt
 	git add -A
 	git reset --hard HEAD
 
-### Nach merge Konflikten aufräumen
+### Nach merge Konflikte aufräumen
 
 	rm $(find . -name \*.orig)
 
