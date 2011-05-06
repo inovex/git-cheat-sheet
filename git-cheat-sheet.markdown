@@ -216,20 +216,24 @@ in `.gitattributes`:
 
 	*.java merge=kdiff3
 
-## Dateien ignorieren
+## (untracked) Dateien ignorieren
 
 - Hilfe: `git help gitignore`
 
 - global (wird commited und gilt für alle): *.gitignore*
 - lokal (wird nicht commit und gilt nur lokal): *$GIT_DIR/info/exclude*
 
-### Alternatives lokales ignoren (nicht commited)
+### (tracked) Dateien ignorieren
 
-Die beiden Dateien `foo.txt` und `bar.txt` lassen sich so ignorieren:
+Änderungen an den beiden Dateien `foo.txt` und `bar.txt` lassen sich wie folgt ignorieren:
 
 `git update-index --assume-unchanged -- foo.txt bar.txt`
 
 Zuruecksetzen mittels:
+
+`git update-index --no-assume-unchanged -- foo.txt bar.txt`
+
+oder
 
 `git update-index --really-refresh`
 
