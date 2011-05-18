@@ -111,6 +111,17 @@ Revisionen. Hilfe siehe `git help log` und `git help rev-parse`
 - Log einer Datei: `git log <treeish> <path>`
 - tree eines commits: `git ls-tree <commit>`
 
+### log inklusive file renames
+
+Damit die history einer Datei vor der Umbenennung mit angezeigt wird,
+muss `git log` das flag `--follow` übergeben werden.
+
+	--follow
+		Continue listing the history of a file beyond renames.
+
+z. B.
+	git log --follow WebContent/WEB-INF/com/foo/bar/Applet.java
+
 ### diff
 - analog zu `git diff` kann auch `git difftool` verwendet werden
 - diff zum *index*: `git diff`
