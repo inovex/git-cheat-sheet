@@ -2,40 +2,40 @@
 
 * [Git Book]: <http://book.git-scm.com/>
 
-##working copy
+## working copy
 - das Arbeitsverzeichnis mit den ausgecheckten Dateien
 
-##repository
+## repository
 - das *.git* Verzeichnis
 
-##stash
+## stash
 - siehe `git help stash`
 - Zwischenablage für Änderungen, die nicht commited werden sollen
 - sinnvoll bei Wechsel der Branch, oder beim Mergen von Branches
 
-##index
+## index
 - auch *staging area* genannt
 - enthält Änderungen die im nächsten Commit enthalten sein sollen
 - Stand der Datei im *index* ist exakt der Stand zum Zeitpunkt des Hinzufügens (Snapshot)
 
-##tracking
+## tracking
 
 Von tracked spricht man:
 - bei Dateien wenn sie im repository erfasst sind
 - bei einer lokalen branch, wenn sie eine remote branch referenziert
 
-##referenzen
+## referenzen
 - Branches und Tags sind Referenzen
 - Referenzen werden im Ordner `.git/refs` angelegt
 - Referenzen sind Pointer auf Commits (Tags können auch auf Trees oder Blobs zeigen)
 - im Ordner `.git/refs/heads` befinden sich die Referenzen auf die lokale branches
 - im Ordner `.git/refs/remotes/<remote name>` befinden sich die Referenzen auf die remote branches
 
-##blob
+## blob
 - enthält den Inhalt einer Datei zu dem Zeitpunkt zu dem sie commited wurde
 - entspricht der version einer Datei
 
-##treeish
+## treeish
 
 Git unterstützt eine Vielzahl von Möglichkeiten einen Commit oder Tree zu referenzieren. 
 Diese Möglichkeiten subsummiert man unter der Bezeichnung *treeish*:
@@ -128,6 +128,29 @@ z. B.
 - diff zu anderem commit: `git diff <commit>`
 - zwei Snapshots einer Datei vergleichen: `git diff <ref|commit> <ref|commit> -- <file>`
 
+
+### merge commit diff/details
+
+<code>
+      1 commit d359156d4c13b65941a4468d7396b5136951f442
+      2 Merge: 5a0899d 57ba4fd
+      3 Author: Foo Bar <foo.bar@company.de>
+      4 Date:   Wed Nov 16 16:47:37 2011 +0100
+      5 
+      6     Merge remote branch 'origin/somebranch' into myfeature_branch
+</code>
+
+Ein Merge-Commit hat immer zwei Parents. Der erste Parent ist die lokale Branch auf der gearbeitet wird (hier *myfeature_branch*),
+Der zweite Parent ist die Branch welche in die lokale Branch gemerged wird (hier *origin/somebranch*).
+
+Um sich die Commits anzuzeigen die durch den Merge hinzugekommen sind kann folgender Befehl verwendet werden:
+
+<code>
+	git log --stat -p 57ba4fd ^5a0899d
+</code>
+
+Die schreibweise hier bedeutet: Zeige alle Commits an die in *origin/somebranch* vorhanden sind, aber nicht in *myfeature_branch*.
+Siehe auch *SPECIFYING REVISIONS in `git help rev-parse`*.
 
 ## index
 
