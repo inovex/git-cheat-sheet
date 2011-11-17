@@ -150,10 +150,12 @@ Siehe auch *SPECIFYING REVISIONS in `git help rev-parse`*.
 
 
 ### blame
-Show what revision and author last modified each line of a file.
+Zeige Revision und Autor der letzten Änderung für jede Zeile einer Datei:
+
 	git blame WebContent/jsps/rbc/tpms/tpmsBOMs.jsp
 
-Show revision and author of certain commit and restrict the output to a certain range of lines
+Schränke die Anzeige von Revision und Autor auf einen bestimmten Zeilenbereich ein:
+
 	git blame -L 1110,1160 WebContent/jsps/rbc/tpms/tpmsBOMs.jsp
 
 
