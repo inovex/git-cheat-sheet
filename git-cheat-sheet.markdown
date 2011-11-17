@@ -87,7 +87,7 @@ alle Commits der Zielbranch.
 - Konfiguration: `git config [--global] <key> <value>`
 - Konfiguration ausgeben: `git config --get <key>`
 
-## Statistiken/Diagnose (Log, History, Diff ...)
+## Statistiken/Diagnose (Log, History, Diff, Blame ...)
 
 Befehle: `branch, log, diff, difftool, show, ls-tree`
 
@@ -147,6 +147,15 @@ Um sich die Commits anzuzeigen die durch den Merge hinzugekommen sind kann folge
 
 Die schreibweise hier bedeutet: Zeige alle Commits an die in *origin/somebranch* vorhanden sind, aber nicht in *myfeature_branch*.
 Siehe auch *SPECIFYING REVISIONS in `git help rev-parse`*.
+
+
+### blame
+Show what revision and author last modified each line of a file.
+	git blame WebContent/jsps/rbc/tpms/tpmsBOMs.jsp
+
+Show revision and author of certain commit and restrict the output to a certain range of lines
+	git blame -L 1110,1160 WebContent/jsps/rbc/tpms/tpmsBOMs.jsp
+
 
 ## index
 
