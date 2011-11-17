@@ -131,23 +131,19 @@ z. B.
 
 ### merge commit diff/details
 
-<code>
-      1 commit d359156d4c13b65941a4468d7396b5136951f442
-      2 Merge: 5a0899d 57ba4fd
-      3 Author: Foo Bar <foo.bar@company.de>
-      4 Date:   Wed Nov 16 16:47:37 2011 +0100
-      5 
-      6     Merge remote branch 'origin/somebranch' into myfeature_branch
-</code>
+	1 commit d359156d4c13b65941a4468d7396b5136951f442
+	2 Merge: 5a0899d 57ba4fd
+	3 Author: Foo Bar <foo.bar@company.de>
+	4 Date:   Wed Nov 16 16:47:37 2011 +0100
+	5 
+	6     Merge remote branch 'origin/somebranch' into myfeature_branch
 
-Ein Merge-Commit hat immer zwei Parents. Der erste Parent ist die lokale Branch auf der gearbeitet wird (hier *myfeature_branch*),
+Ein Merge-Commit hat immer zwei Parents. Der erste Parent ist die lokale Branch auf der gearbeitet wird (hier *myfeature_branch*).
 Der zweite Parent ist die Branch welche in die lokale Branch gemerged wird (hier *origin/somebranch*).
 
 Um sich die Commits anzuzeigen die durch den Merge hinzugekommen sind kann folgender Befehl verwendet werden:
 
-<code>
 	git log --stat -p 57ba4fd ^5a0899d
-</code>
 
 Die schreibweise hier bedeutet: Zeige alle Commits an die in *origin/somebranch* vorhanden sind, aber nicht in *myfeature_branch*.
 Siehe auch *SPECIFYING REVISIONS in `git help rev-parse`*.
