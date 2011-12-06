@@ -492,4 +492,4 @@ Log Ausgabe in dem der entsprechende SHA1 gesucht werden kann:
    * Wenn bereits ein Merge stattgefunden hat findet sich ein Sha in der Ausgabe von: `git reflog`
    * Wenn noch kein Merge stattgefunden hat suche den Sha über: `git fsck`
 2. Anschließend kann der Branch wiederhergestellt werden:
-   `git branch <deleted branch name> <found-sha1-id>`
+   git branch <deleted branch name> <found-sha1-id>
