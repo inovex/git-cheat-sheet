@@ -487,7 +487,7 @@ Log Ausgabe in dem der entsprechende SHA1 gesucht werden kann:
 
 ### Wiederherstellen eines gelöschten Branches
 
-1. Finde den letzten Sha des gelöschten Branches
+1. Finde den letzten Sha des gelöschten Branches auf einem der folgenden Wege:
    * Zurückscrollen in der geöffneten Git Konsole ("git branch -d" gibt den Sha aus).
    * Wenn bereits ein Merge stattgefunden hat findet sich ein Sha in der Ausgabe von: git reflog
    * Wenn noch kein Merge stattgefunden hat suche den Sha über: git fsck
