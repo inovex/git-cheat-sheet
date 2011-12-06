@@ -485,3 +485,10 @@ Log Ausgabe in dem der entsprechende SHA1 gesucht werden kann:
   
 	git log -t --no-abbrev --raw master_dev
 
+### Wiederherstellen eines gelöschten Branches
+
+1. Finde den letzten Sha des gelöschten Branches
+   * Zurückscrollen in der geöffneten Git Konsole ("git branch -d" gibt den Sha aus).
+   * Wenn bereits ein Merge stattgefunden hat findet sich ein Sha in der Ausgabe von: git reflog
+   * Wenn noch kein Merge stattgefunden hat suche den Sha über: git fsck
+2. Anschließend kann der Branch wiederhergestellt werden: git branch <deleted branch name> <found-sha1-id>
