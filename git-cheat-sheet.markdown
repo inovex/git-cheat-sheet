@@ -487,11 +487,21 @@ Log Ausgabe in dem der entsprechende SHA1 gesucht werden kann:
 
 ### Wiederherstellen eines gelöschten Branches
 
-1. Finde den letzten Sha1 des gelöschten Branches auf einem der folgenden Wege:
-   * Zurückscrollen in der geöffneten Git Konsole (`git branch -d` gibt den Sha1 aus).
-   * Wenn bereits ein Merge stattgefunden hat findet sich ein Sha1 in der Ausgabe von: `git reflog`
-   * Wenn noch kein Merge stattgefunden hat suche den Sha1 über: `git fsck`
-2. Anschließend kann der Branch wiederhergestellt werden:
+Finde den letzten Commit SHA des gelöschten Branches auf einem der folgenden Wege:
+
+* Der SHA befindet sich noch in der Ausgabe der geöffneten Konsole. `git branch -D` gibt z.B. den SHA beim löschen mit aus.
+
+	$:/tmp/testrepo$ git branch -D master1
+	Deleted branch master1 (was efde525).
+
+* Ansonsten kann man über `git reflog` den letzten commit SHA der gelöschten branch finden:
+
+	$:/tmp/testrepo$ git reflog
+	1 daa6efa HEAD@{0}: checkout: moving from master1 to master
+	2 efde525 HEAD@{1}: commit: second commit
+	3 daa6efa HEAD@{2}: checkout: moving from master to master1
+
+Anschließend kann der Branch wiederhergestellt werden:
 ```
-git branch <deleted branch name> <found-sha1-id>
+git branch master1 efde525
 ```
