@@ -184,6 +184,11 @@ Erklärung `commit`:
 - der *index* wird geleert
 - die Referenz des HEAD wird auf den neuen commit gesetzt
 
+Letzten commit Kommentar ändern mit `amend`
+
+- Commit Kommentar mit Standardeditor ändern: `git commit --amend`
+- Commit Kommentar direkt neu angeben: `git commit --amend -m 'my new commit comment'`
+
 ## branches
 
 Befehle: `branch, merge`
